@@ -8,10 +8,12 @@ import queryClient from "./config/queryClient.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 
+ <GoogleOAuthProvider clientId={import.meta.env.GOOGLE_CLIENT_ID}>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <App />
         <ReactQueryDevtools position="bottom-right" initialIsOpen={false} />
       </BrowserRouter>
     </QueryClientProvider>
+    </GoogleOAuthProvider>
 );

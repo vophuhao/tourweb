@@ -4,20 +4,20 @@ import axios from 'axios';
 export default function LoginModal({ isOpen, onClose }) {
     if (!isOpen) return null;
 
-    const login = useGoogleLogin({
-    onSuccess: async (tokenResponse) => {
-      try {
-        const res = await axios.post('http://localhost:4000/api/auth/google', {
-          credential: tokenResponse.credential,
-        }, { withCredentials: true });
+//     const login = useGoogleLogin({
+//     onSuccess: async (tokenResponse) => {
+//       try {
+//         const res = await axios.post('http://localhost:4000/api/auth/google', {
+//           credential: tokenResponse.credential,
+//         }, { withCredentials: true });
 
-        console.log("User:", res.data);
-      } catch (err) {
-        console.error("Login failed", err);
-      }
-    },
-    onError: () => console.log("Login Failed"),
-  });
+//         console.log("User:", res.data);
+//       } catch (err) {
+//         console.error("Login failed", err);
+//       }
+//     },
+//     onError: () => console.log("Login Failed"),
+//   });
     return (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
             <div className="bg-white rounded-2xl p-6 w-[90%] max-w-md relative shadow-lg">
@@ -65,7 +65,7 @@ export default function LoginModal({ isOpen, onClose }) {
                 </div>
 
                 <button
-                    onClick={login}
+                    // onClick={login}
                     className="mb-20 mt-10 w-full h-13 border border-gray-300 py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition"
                 >
                     <img
